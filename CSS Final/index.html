@@ -1,0 +1,341 @@
+<!-- 
+    Name: Aayush Patel
+    Course: CS40SPT
+    Teacher: Mr. Hardman
+    School: Pembina Trails Early College
+    Date Last Modified: May 15, 2021
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> WestJet </title>
+
+        <!-- Styles basic website setup -->
+        <meta charset = "utf-8"/>
+        <meta name = "viewport" content = "initial-scale = 1.0, user-scalable = yes"/>
+
+        <!-- Links required external CSS stylesheets to this webpage -->
+        <link rel = "stylesheet" type = "text/css" href = "Stylesheets/main.css"/>
+
+        <style>
+            html {
+                height: 600px;
+            }
+
+            /* Styles header image to fill up entire width of screen and to lay underneath the mask */
+            #coverImage {
+                display: block;
+                position: relative;
+                top: -60px;
+                right: 0px;
+                z-index: 0;
+
+                margin: 0px;
+                width: 100%;
+                height: 665px;
+            }
+
+            /* Creates a black opaque mask layered on top of header image to allow for the text overlaying to become more visible */
+            #coverImageMask{
+                display: block;
+                position: relative;
+                right: 0px;
+                bottom: 725px;
+                z-index: 1;
+
+                margin: 0px;
+                padding: 0px;
+                border: 0px;
+                width: 100%;
+                height: 665px;
+
+                opacity: 0.6;
+            }
+
+            /* Styles back to top button to be positioned in the bottom right of the screen throughout the webpage
+            when scrolled */
+            #button {
+                display: none;
+                position: fixed;
+                bottom: 9px;
+                right: 8px;
+                z-index: 100;
+
+                font-size: 18px;
+                color: white;
+
+                border: none;
+                -moz-border-radius: 4px;
+                -webkit-border-radius: 4px;
+                border-radius: 4px;
+
+                outline: none;
+                cursor: pointer;
+
+                background-color: #05aba4;
+                            
+                padding: 15px;
+                width: 115px;
+            }
+
+            /* Changes back to top button colour when hovered */
+            #button:hover {
+                background-color: #233362;
+            }
+
+/* ----------------------------- Styling for anything related to the animation ----------------------------- */
+
+            /* Styles all animation components to be positioned on top of header image and its mask */
+            .wordCarousel {
+                position: relative;
+                top: 360px;
+                left: 275px;
+                z-index: 2;
+                /* overflow: hidden; */
+
+                margin: 0px;
+                padding: 0px;
+                width: 750px;
+                height: 60px;
+
+                font-size: 44px;
+                font-weight: 100;
+                color: white;
+            }
+
+            /* Styles the visible field through which the words in the carousel pass */
+            #wordCarouselViewfield {
+                margin-top: -12px;
+                height: 80px;
+                width: 400px;
+
+                position: relative;
+                bottom: 50px;
+                left: 25px;
+                overflow: hidden;
+                float: right;
+            }
+
+            /* Styles Ul which wraps the words which will cycle through the carousel */
+            .wordsContainer {
+                position: relative;
+                left: 0px;
+                margin-bottom: 0px;
+                padding: 0px;
+
+                width: 300px;
+
+                /* Creates a cubic bezier curve with 4 points. If we label all 4 elements as x1, y1, x2, y2 in that
+                order, y2 is greater than y1 which will create a small bounce effect that you may notice in the 
+                animation */
+                -webkit-animation: flipItems 10s cubic-bezier(0.23, 1, 0.32, 1.3) infinite;
+                animation: flipItems 10s cubic-bezier(0.23, 1, 0.32, 1.3) infinite;
+            }
+
+            /* Styles the words that pass through the viewfield */
+            .words {
+                display: block;
+                position: relative;
+
+                margin-bottom: 45px;
+                padding: 0px 0px;
+                height: 45px;
+                width: 600px;
+
+                color: white;
+                text-align: left;
+                font-weight: bold;
+            }
+
+            /* So here me out I found a little trick, I have a list of words that cycle through a visible field
+            due to a change in margin-top which essentially "pushes" the list downwards, one word at a time and
+            cycles infinitely */
+            @-webkit-keyframes flipItems {
+                0% { margin-top: -348px; }
+                5% { margin-top: -258px; }
+                25% { margin-top: -258px; }
+                30% { margin-top: -168px; }
+                50% { margin-top: -168px; }
+                55% { margin-top: -78px; }
+                75% { margin-top: -78px; }
+                80% { margin-top: 12px; }
+                99.99% { margin-top: 12px; }
+                100% { margin-top: -258px; }
+            }
+
+            @keyframes flipItems {
+                0% { margin-top: -348px; }
+                5% { margin-top: -258px; }
+                25% { margin-top: -258px; }
+                30% { margin-top: -168px; }
+                50% { margin-top: -168px; }
+                55% { margin-top: -78px; }
+                75% { margin-top: -78px; }
+                80% { margin-top: 12px; }
+                99.99% { margin-top: 12px; }
+                100% { margin-top: -258px; }
+            }
+
+/* ------------------------------------------------------------------------------------------------------------- */
+
+            /* Styles container for all main content on this page to be positioned in the centre of the page and 
+            sets the width to 80%% to allow for white space on the sides */
+            .content {
+                width: 80%;
+
+                margin: 0 auto;
+            }
+
+            /* Styles subheadings for this webpage */
+            h2 {
+                text-align: center;
+                font-size: 36px;
+                color: #233362;
+            }
+
+            /* Styles images to be positioned to the right of the corresponding paragraph */
+            .images-1 {
+                display: inline; 
+                float: right;
+                
+                width: 330px; 
+                height: 220px;
+
+                padding-left: 20px;
+            }
+
+            /* Styles paragraphs with content to be positioned upon its container in a dark blue font */
+            p {
+                font-size: 15px;
+                color: #233362;
+
+                padding: 10px;
+                margin: -10px;
+
+                position: relative;
+                display: inline;
+                z-index: 2;
+            }
+
+            /* Styles content card containers to have a slightly different background colour to them than the 
+            document background and to have an accent border */
+            .main-content {
+                padding: 20px;
+
+                background-color: white; 
+                height: 221px;
+
+                border-bottom: solid 5px #05aba4;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <!-- Creates a logo on the left side of the navigation bar which also acts as a link to the home page -->
+                <a href = "index.html" style = "top: -10px; left: -428px;"> <img id = "logo" style = "top: 15px; left: -8px;" src = "Images/Other/airplane-logo.jpg" width = "50px" alt = "WestJet logo"> </a>
+                
+                <!-- Creates navigation bar with links to all pages of website -->
+                <li> <a class = "navBar" href = "index.html"> Home </a> </li>
+                <li> <a class = "navBar" href = "about.html"> About </a> </li>
+                <li> <a class = "navBar" href = "destinations.html"> Destinations </a> </li>
+            </ul>
+
+            <!-- Scroll back to top button for user to use if they do not wish to scroll all the way back to the top -->
+            <button onclick = "topFunction()" id = "button" title = "Go to top"> Go to Top </button>
+        </nav>
+
+        <header>
+            <h4 class = "wordCarousel">
+
+                <!-- Creates a span constant "Experience" that sits next to the carousel and sets the z-index to 
+                lay upon the image mask-->
+                <span style = "z-index: 3; font-weight: bold; font-size: 56px; position: relative; bottom: 52px;"> Experience: </span>
+                    
+                <!-- Creates a div which acts as a limited viewfield for these words to pass through repeatedly -->
+                <div id = "wordCarouselViewfield">
+
+                    <!-- Creates a list that contains the words that are part of the carousel -->
+                    <ul class = "wordsContainer" style = "font-weight: bold; font-size: 56px;">
+                        <li class = "words"> Wonders </li>
+                        <li class = "words"> Thrills </li>
+                        <li class = "words"> Adventures </li>
+                        <li class = "words"> <span style = "font-size: 68px;"> WestJet </span></li>
+                    </ul>
+                </div>
+            </h4>
+
+            <div style = "height: 600px;">
+                <!-- Inserts image used as a header to layer title upon -->
+                <img id = "coverImage" src = "Images/Home Page/cover-image.jpg" alt = "Snow mountaintop region surrounding clear lake"/>
+
+                <!-- Places a mask on top of header image to allow for visibility of title on top -->
+                <img id = "coverImageMask" src = "Images/Other/cover-image-mask.jpg"/>
+            </div>
+        </header>
+
+        <br/>
+        
+        <!-- This div contains all legitimate content on this webpage -->
+        <div class = "content">
+
+            <!-- This div contains all information corresponding to the COVID-19 portion of this webpage -->
+            <div class = "covid-19">
+                <h2> COVID-19 Update </h2>
+        
+                <br/>
+        
+                <!-- Creates container for COVID-19 update paragraph and image just underneath the subtitle -->
+                <div class = "main-content">
+                    <img src = "Images/Home Page/masked-employees.jpg" class = "images-1" alt = "3 masked WestJet employees posing for picture within plane">
+        
+                    <br/>
+        
+                    <p> 
+                        We continue to provide safe and flexible travel options within Canada and select 
+                        international destinations.
+
+                        <br/> <br/>
+
+                        Whether we are flying or not, we are always here for our guests. During this time, we are 
+                        doing everything we can to accommodate your changing travel needs. We continue to ensure 
+                        our aircraft meet the highest safety and health standards and we’ve added COVID-19 
+                        insurance coverage so you’ll be taken care of as you travel.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <br/> <br/>
+
+        <!-- Creates small fineprint footer crediting information from WestJet -->
+        <footer style = "top: -10px; margin: 0px;">
+            <p style = "color: white; font-size: 12px; position: relative; top: 12px;"> Content belongs to WestJet Canada</p>
+        </footer>
+
+        <!-- Javascript code for back to top button -->
+        <script>
+            //Get the button
+            var mybutton = document.getElementById("button");
+            
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+            
+            // When the user clicks on the button, scroll to the top of the page
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
+    </body>
+</html>  

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!-- Styles basic website setup -->
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Links required external stylesheets to this webpage -->
+        <link rel = "stylesheet" type = "text/css" href = "Stylesheets/main.css"/>
+        
+        <title> Travel Destinations </title>
+
+        <style>
+            /* Styles header image to fill up entire width of screen and to lay underneath the mask */
+            #coverImage {
+                display: block;
+                position: relative;
+                top: 10px;
+                right: 0px;
+                z-index: 0;
+
+                margin: 0px;
+                width: 100%;
+                height: 665px;
+            }
+
+            /* Creates a black opaque mask layered on top of header image to allow for the text overlaying to become more visible */
+            #coverImageMask{
+                display: block;
+                position: relative;
+                right: 0px;
+                top: -655px;
+                z-index: 1;
+
+                margin: 0px;
+                padding: 0px;
+                border: 0px;
+                width: 100%;
+                height: 665px;
+
+                opacity: 0.6;
+            }
+
+            /* Styles page title to be positioned in the middle of the header image */
+            h1 {
+                font-size: 56px;
+                text-align: center;
+                color: white;
+
+                position: relative;
+                bottom: 1060px;
+
+                z-index: 3;
+            }
+            
+            /* Styles container for all main content on this page to be positioned in the centre of the page and 
+            sets the width to 80%% to allow for white space on the sides */
+            .content {
+                position: relative;
+                top: 100px;
+
+                width: 80%;
+
+                margin: 0 auto;
+            }
+
+            /* Styles subheadings for this webpage */
+            h2 {
+                text-align: center;
+                font-size: 36px;
+                color: #233362;
+            }
+
+            /* Styles images to be positioned to the right of the corresponding paragraph */
+            .images-1 {
+                display: inline; 
+                float: right;
+                
+                width: 330px; 
+                height: 220px;
+
+                padding-left: 20px;
+            }
+
+            /* Styles images to be positioned to the left of the corresponding paragraph */
+            .images-2 {
+                display: inline;
+                float: left;
+                
+                width: 330px; 
+                height: 220px;
+
+                padding-right: 20px;
+            }
+
+            /* Styles paragraphs with content to be positioned upon its container in a dark blue font */
+            p {
+                font-size: 15px;
+                color: #233362;
+
+                padding: 10px;
+                margin: -10px;
+
+                position: relative;
+                display: inline;
+                z-index: 2;
+            }
+
+            /* Styles content card containers to have a slightly different background colour to them than the 
+            document background and to have an accent border */
+            .main-content {
+                padding: 20px;
+
+                background-color: white; 
+                height: 221px;
+
+                border-bottom: solid 5px #05aba4;
+            }
+
+            /* Styles back to top button to be positioned in the bottom right of the screen throughout the webpage
+            when scrolled */
+            #button {
+                display: none;
+                position: fixed;
+                bottom: 9px;
+                right: 8px;
+                z-index: 100;
+
+                font-size: 18px;
+                color: white;
+
+                border: none;
+                -moz-border-radius: 4px;
+                -webkit-border-radius: 4px;
+                border-radius: 4px;
+                
+                outline: none;
+                cursor: pointer;
+
+                background-color: #05aba4;
+                            
+                padding: 15px;
+                width: 115px;
+            }
+
+            /* Changes back to top button colour when hovered */
+            #button:hover {
+                background-color: #233362;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <!-- Creates a logo on the left side of the navigation bar which also acts as a link to the home page -->
+                <a href = "index.html" style = "top: -10px; left: -436px;"> <img id = "logo" style = "top: 15px; left: 0px;" src = "Images/Other/airplane-logo.jpg" width = "50px"> </a>
+                
+                <!-- Creates navigation bar with links to all pages of website -->
+                <li> <a class = "navBar" href = "index.html"> Home </a> </li>
+                <li> <a class = "navBar" href = "about.html"> About </a> </li>
+                <li> <a class = "navBar" href = "destinations.html"> Destinations </a> </li>
+            </ul>
+        </nav>
+
+        <div style = "height: 600px;">
+            <!-- Inserts image used as a header to layer title upon -->
+            <img id = "coverImage" src = "Images/Destinations/cover-image-3.jpg" alt = "Picture of the cityscape Zurich, Switzerland at night"/>
+
+            <!-- Places a mask on top of header image to allow for visibility of title on top -->
+            <img id = "coverImageMask" src = "Images/Other/cover-image-mask.jpg"/>
+
+            <!-- Title for this webpage -->
+            <h1> Destinations </h1>
+
+            <!-- Scroll back to top button for user to use if they do not wish to scroll all the way back to the top -->
+            <button onclick = "topFunction()" id = "button" title = "Go to top"> Go to Top </button>
+        </div>
+
+        <!-- This div contains all legitimate content on this webpage -->
+        <div class = "content">
+
+            <!-- This div contains all information corresponding to the European travel destinations portion of this webpage -->
+            <div class = "europe">
+                <h2> Europe </h2>
+
+                <br/>
+
+                <!-- Creates container for Greece paragraph and image just underneath the subtitle -->
+                <div class = "main-content">
+                    <img src = "Images/Destinations/Greece.jpg" class = "images-2" alt = "People on cliffside beach on a sunny day in Greece">
+
+                    <br/>
+
+                    <p> 
+                        Greece is one of those rare places where ancient history is still very much a part of 
+                        modern life. Visitors are as much drawn to the country’s epic intellectual history as its 
+                        beauty and charm. Make time for the iconic features of the Acropolis of Athens, which 
+                        include the Parthenon, the Erechtheion, and the Temple of Athena Nike. Mythology buffs 
+                        will appreciate Crete, Olympia, Samos, and Naxos for their mythological significance. For 
+                        a peaceful beach vacation, the island of Santorini is perfect.
+                    </p>
+                </div>
+
+                <br/>
+
+                <!-- Creates container for Italy paragraph and image just underneath the subtitle -->
+                <div class = "main-content">
+                    <img src = "Images/Destinations/Italy.jpg" class = "images-1" alt = "Row of colourful Italian houses on a waterfront">
+
+                    <br/>
+
+                    <p> 
+                        From the silvery crests of the Alps to the sparkling Mediterranean Sea, Italy’s beauty is 
+                        unparalleled. A visit could mean marveling at the Colosseum after a tender plate of pasta, 
+                        or drifting lazily down a canal, your belly full of local Sangiovese. Explore Tuscan 
+                        vineyards and olive groves or drool over boutiques in fashionable Milan. Look for mermaids 
+                        from the cliffs of Sorrento or nibble on Parma’s famous cheese and prosciutto. Anywhere 
+                        you choose, the country will captivate you.
+                    </p>
+                </div>
+
+                <br/>
+
+                <!-- Creates container for France paragraph and image just underneath the subtitle -->
+                <div class = "main-content">
+                    <img src = "Images/Destinations/France.jpg" class = "images-2" alt = "Rustic image of Parisian street crowded with cars and people with the Eiffel tower at the very back">
+
+                    <br/>
+
+                    <p> 
+                        There's much more to France than Paris—from the fairy-tale châteaux of the Loire Valley 
+                        to the lavender fields of Provence, and the French Riviera's celebrity-studded beaches. 
+                        World-famous gastronomy and fine wines provide the perfect complement to the country's 
+                        alpine views and architectural masterpieces.The country lures with its magnificent art, 
+                        architecture, culture, and cuisine, but there’s also a quieter magic waiting to be explored:
+                        the quaint cobbled lanes, and the sweet patisseries around the corner. Go make France your 
+                        own.
+                    </p>
+                </div>
+            </div>
+
+            <br/> <br/>
+
+            <!-- This div contains all information corresponding to the South American travel destinations portion of this webpage -->
+            <div class = "South America">
+                <h2> South America </h2>
+
+                <br/> <br/>
+
+                <!-- Creates container for Brazil paragraph and image just underneath the subtitle -->
+                <div class = "main-content">
+                    <img src = "Images/Destinations/Brazil.jpg" class = "images-1" alt = "Tall Brazilian waterfall surrounded by lush greenery">
+
+                    <br/>
+
+                    <p> 
+                        The wealth of flora and fauna and opportunities to observe them are unparalleled in the 
+                        Amazon. Riverboats ply the waters of this fascinating wilderness, home to pink river 
+                        dolphins, clamorous howler monkeys and raucous toucans, along with many other species. 
+                        Photograph your adventure to your heart's content, run the rapids or stalk elusive jaguars 
+                        by night. Make your dreams come true here in Brazil.
+                    </p>
+                </div>
+
+                <br/>
+
+                <!-- Creates container for Argentina paragraph and image just underneath the subtitle -->
+                <div class = "main-content">
+                    <img src = "Images/Destinations/Argentina.jpg" class = "images-2" alt = "Frozen lake landscape surrounded by snowy forests and plains">
+
+                    <br/>
+
+                    <p> 
+                        Travel to Argentina and you’ll be rewarded with natural wonders and one of the world’s most 
+                        stylish capital cities, Buenos Aires. Stretching from the Tropic of Capricorn towards the 
+                        tip of Antarctica, Argentina encompasses a staggering diversity of terrains. You’ll find 
+                        everything from lush wetlands to the end-of-the-world archipelago of Tierra del Fuego. Its 
+                        most emblematic landscapes are the flatlands of the Pampas and the dramatic steppe of 
+                        Patagonia. Read our guide to Argentina for everything you need to know before you go.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <br/> <br/>
+
+        <!-- Creates small fineprint footer crediting information from WestJet -->
+        <footer>
+            <p style = "color: white; font-size: 12px; top: 12px;"> Content belongs to WestJet Canada</p>
+        </footer>
+
+        <br/>
+
+        <!-- Javascript code for back to top button -->
+        <script>
+            //Get the button
+            var mybutton = document.getElementById("button");
+            
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+            
+            // When the user clicks on the button, scroll to the top of the page
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
+    </body>
+</html>

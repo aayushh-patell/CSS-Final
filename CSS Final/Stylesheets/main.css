@@ -1,0 +1,91 @@
+/* Styles entire html document with uniform settings */
+html {
+    background-size: 2000px;
+    background-color: #F7F7F7;
+
+    font-family: Helvetica, sans-serif;
+    letter-spacing: 2px;
+    line-height: 140%;
+}
+
+/* Styles nav tag */
+nav {
+    height: 50px;
+
+    font-size: 16px;
+}
+
+/* Styles the unordered list that is holdiing navigation links */
+nav ul {
+    list-style: none;
+    text-align: center;
+    
+    padding: 0px;
+    margin: 10px 0px;
+    height: 50px;
+
+    background-color: #233362;
+}
+
+/* Styles WestJet logo within the navigation bar */
+nav img {
+    position: relative;
+
+    height: 40px;
+    width: 40px;
+}
+
+/* Styles list that encapsulates the navigationn links */
+nav li {
+    position: inherit;
+    display: inline-block;
+
+    padding: 10px;
+}
+
+/* Styles navigation links */
+nav a {
+    position: relative;
+    top: -10px;
+    
+    padding: 5px;
+    margin: 0px;
+    height: 50px;
+
+    text-decoration: none;
+    color: white;
+}
+
+/* Creates a transition where if you hover or focus over a menu option, it will ease into a new background colour */
+.navBar {
+    -webkit-transition: background-color 1s ease;
+    transition: background-color 1s ease;
+}
+
+.navBar:hover, .navBar:focus {
+    background-color: #48517b;
+}
+
+/* Creates a transition where if you hover or focus over the logo in the top left of the navigation bar, it will 
+ease into a circular shape from a square in 1s */
+#logo {
+    -webkit-transition: border-radius 1s ease;
+    transition: border-radius 1s ease;
+}
+
+#logo:hover, #logo:focus {
+    border-radius: 20px;
+}
+
+footer {
+    position: relative;
+    top: 100px;
+
+    background-color: #233362;
+    height: 50px;
+
+    color: white;
+    text-align: center;
+
+    margin-bottom: 80px;
+}
