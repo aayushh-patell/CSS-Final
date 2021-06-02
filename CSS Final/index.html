@@ -129,6 +129,8 @@
                 /* Creates a cubic bezier curve with 4 points. If we label all 4 elements as x1, y1, x2, y2 in that
                 order, y2 is greater than y1 which will create a small bounce effect that you may notice in the 
                 animation */
+
+                /* Sourced from https://codepen.io/EricPorter/pen/JjPmOOb */
                 -webkit-animation: flipItems 10s cubic-bezier(0.23, 1, 0.32, 1.3) infinite;
                 animation: flipItems 10s cubic-bezier(0.23, 1, 0.32, 1.3) infinite;
             }
@@ -151,6 +153,8 @@
             /* So here me out I found a little trick, I have a list of words that cycle through a visible field
             due to a change in margin-top which essentially "pushes" the list downwards, one word at a time and
             cycles infinitely */
+
+            /* Sourced from https://codepen.io/EricPorter/pen/JjPmOOb */
             @-webkit-keyframes flipItems {
                 0% { margin-top: -348px; }
                 5% { margin-top: -258px; }
