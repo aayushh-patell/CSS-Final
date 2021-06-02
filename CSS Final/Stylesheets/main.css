@@ -66,6 +66,12 @@ nav a {
     background-color: #48517b;
 }
 
+/* I don't believe that it is necessary to include a visited anchor attribute on my website as I do not believe it is
+necessay nor appropriate */
+.navBar:visited {
+    background-color: #48517b;
+}
+
 /* Creates a transition where if you hover or focus over the logo in the top left of the navigation bar, it will 
 ease into a circular shape from a square in 1s */
 #logo {
